@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="styles.css" />
     <meta name="theme-color" content="#faf6f3" />
 
-    <!-- Helper styles for centered hero + centered footer -->
     <style>
       /* Full-bleed centered hero */
       .hero.centered {
@@ -23,11 +22,12 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        min-height: 88vh; /* nearly full screen */
+        min-height: 88vh;
         width: 100%;
-        background: #faf6f3; /* matches your flyer tone */
+        background: #faf6f3;
         padding: 40px 16px;
       }
+
       .hero.centered .hero-copy {
         max-width: 900px;
         margin: 0 auto;
@@ -35,7 +35,29 @@
         padding: 56px 40px;
         border-radius: 16px;
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+        animation: fadeInHero 1.4s ease-out forwards;
       }
+
+      @keyframes fadeInHero {
+        from {
+          opacity: 0;
+          transform: scale(1.03);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+        margin-bottom: 28px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+
       .hero.centered .eyebrow {
         font-family: "Inter", sans-serif;
         letter-spacing: 1.6px;
@@ -44,6 +66,7 @@
         font-weight: 500;
         margin-bottom: 12px;
       }
+
       .hero.centered h2 {
         font-family: "Playfair Display", serif;
         color: #2f2a26;
@@ -51,6 +74,7 @@
         line-height: 1.1;
         margin: 0 0 18px 0;
       }
+
       .hero.centered .lead {
         font-family: "Inter", sans-serif;
         color: #6b6159;
@@ -59,9 +83,31 @@
         margin: 0;
       }
 
-      /* Center footer text */
+      /* Centered footer */
       .footer {
         text-align: center;
+        width: 100%;
+        padding: 40px 0;
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        color: #7b6a61;
+        background-color: #faf6f3;
+        border-top: 1px solid #e8e0da;
+      }
+      .footer a {
+        color: #7b6a61;
+        text-decoration: none;
+        margin-left: 6px;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 640px) {
+        .footer {
+          font-size: 0.85rem;
+          padding: 30px 10px;
+        }
       }
     </style>
   </head>
@@ -87,6 +133,7 @@
           </div>
         </div>
         <div class="nav-cta">
+          <!-- Keep general booking if someone wants to browse all services -->
           <a
             class="btn"
             href="https://app.squareup.com/appointments/book/e504xsdocu8ral/LNS4EAK6R1NKM/start"
@@ -98,7 +145,7 @@
       </div>
     </header>
 
-    <!-- HERO (centered, no buttons, no calendar card) -->
+    <!-- HERO -->
     <main>
       <section class="hero centered">
         <div class="hero-copy">
@@ -120,6 +167,7 @@
       <!-- PACKAGES -->
       <section class="section">
         <div class="cards wrap">
+          <!-- Quick Listing -->
           <article class="card third">
             <div class="pill">Package</div>
             <h3 class="title">Quick Listing — $200</h3>
@@ -130,7 +178,7 @@
             <div class="btnrow">
               <a
                 class="btn"
-                href="https://app.squareup.com/appointments/book/e504xsdocu8ral/LNS4EAK6R1NKM/start"
+                href="https://book.squareup.com/appointments/e504xsdocu8ral/location/LNS4EAK6R1NKM/services/JLD37JYSJMTUKTAIS7NN5PEX"
                 target="_blank"
                 rel="noopener"
                 >Book and pay</a
@@ -139,6 +187,7 @@
             <p class="small">Popular add-on: Same-day delivery +50</p>
           </article>
 
+          <!-- Full Property -->
           <article class="card third">
             <div class="pill">Package</div>
             <h3 class="title">Full Property — $325</h3>
@@ -149,15 +198,16 @@
             <div class="btnrow">
               <a
                 class="btn"
-                href="https://app.squareup.com/appointments/book/e504xsdocu8ral/LNS4EAK6R1NKM/start"
+                href="https://book.squareup.com/appointments/e504xsdocu8ral/location/LNS4EAK6R1NKM/services/S66XLWFQEGJCLZQFDWEVYEEV"
                 target="_blank"
                 rel="noopener"
                 >Book and pay</a
               >
             </div>
-            <p class="small">Add-ons:Twilight +75</p>
+            <p class="small">Add-ons: Drone +$75, Twilight +75</p>
           </article>
 
+          <!-- Luxury Feature -->
           <article class="card third">
             <div class="pill">Package</div>
             <h3 class="title">Luxury Feature — $450+</h3>
@@ -168,7 +218,7 @@
             <div class="btnrow">
               <a
                 class="btn"
-                href="https://app.squareup.com/appointments/book/e504xsdocu8ral/LNS4EAK6R1NKM/start"
+                href="https://book.squareup.com/appointments/e504xsdocu8ral/location/LNS4EAK6R1NKM/services/XQOLVEPVLU6YS2KP7KAZBK3J"
                 target="_blank"
                 rel="noopener"
                 >Book and pay</a
@@ -218,7 +268,6 @@
       >
     </footer>
 
-    <!-- Only need the year now -->
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
